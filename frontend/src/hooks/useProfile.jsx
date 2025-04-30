@@ -16,12 +16,11 @@ export default function useProfile() {
             }
           })
           const result = await response.json()
-          console.log('profile',result)
           if(response.ok){
             setName(result.user.name)
             setEmail(result.user.email)
             setMobile(result.user.mobile)
-            console.log(result.user)
+
           }
         }catch(e){
           toast.error("failed to fetch profile")

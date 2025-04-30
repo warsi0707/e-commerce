@@ -20,7 +20,7 @@ export default function Profile() {
     }else{
       toast.error("Logout failed")
     }
-    console.log(token)
+
   }
  
   return (

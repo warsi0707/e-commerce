@@ -13,7 +13,7 @@ export default function LatestDrop() {
         method: 'GET'
       })
       const result = await response.json()
-      console.log(result)
+
       if(response.ok){
         setData(result.products)
       }

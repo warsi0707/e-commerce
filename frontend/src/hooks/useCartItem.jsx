@@ -15,7 +15,6 @@ export default function useCartItem() {
             }
           })
           const result = await response.json()
-          console.log(result)
           if(response.ok){
             setCarts(result.cart)
             setTotalAmount(result.totalPrice)

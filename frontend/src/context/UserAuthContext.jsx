@@ -19,7 +19,7 @@ export default function UserAuthContext({ children }) {
         },
       });
       const result = await response.json();
-      console.log(result);
+
       if (result.authenticated == true) {
         setUserAuth(true);
       } else {
@@ -31,16 +31,15 @@ export default function UserAuthContext({ children }) {
   }, []);
 
   const AddToCart = (product) => {
-    console.log("product id:", product.id);
+
     const existingItem = cart.find((item) => item.product.id === product.id);
-    // console.log("existing",existingItem.product.id)
     if (existingItem) {
       const updatedCart = cart.map((item) =>
         item.product.id === product.id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       );
-      console.log("aded item", updatedCart);
+
       toast.success("Item Increased");
       setCart(updatedCart);
       localStorage.setItem("cart", JSON.stringify(updatedCart));
@@ -59,7 +58,6 @@ export default function UserAuthContext({ children }) {
   };
   const IncreaseQuantity = (id) => {
     const existingItem = cart.find((item) => item.product.id === id);
-    console.log("existting", existingItem);
     if (existingItem) {
       const updatedCart = cart.map((item) =>
         item.product.id === id ? { ...item, quantity: item.quantity + 1 } : item

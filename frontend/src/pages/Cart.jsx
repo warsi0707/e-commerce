@@ -11,7 +11,7 @@ export default function Cart() {
   const {cart,total,DeleteItem,setCart} = useContext(AuthProvider)
   const product = cart.map((item)=> item.product.id)
   // const product = cart.
-  console.log("total", total)
+
    const Checkout =async()=>{
       try{
         const response = await fetch(`${Backendurl}/user/order`, {
@@ -23,7 +23,7 @@ export default function Cart() {
           body: JSON.stringify({product,total})
         })
         const result = await response.json()
-        console.log(result)
+
         if(response.ok){
           setCart([])
           toast.success(result.message)

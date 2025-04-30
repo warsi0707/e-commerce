@@ -1,12 +1,13 @@
 const JWT_USER_SECRET = process.env.JWT_USER_SECRET
 const JWT_ADMIN_SECRET = process.env.JWT_ADMIN_SECRET
 const MONGO_URI = process.env.MONGO_URI
-
+const FRONTEND_URL = process.env.FRONTEND_URL
 
 
 
 module.exports = {
     JWT_USER_SECRET,
     JWT_ADMIN_SECRET,
-    MONGO_URI
+    MONGO_URI,
+    FRONTEND_URL
 }

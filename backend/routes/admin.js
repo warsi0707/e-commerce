@@ -43,7 +43,6 @@ adminRouter.post("/signin", async(req, res)=>{
 
     try{
         const finduser = await User.findOne({ email })
-        console.log(finduser)
         if(!finduser){
             return res.status(404).json({
                 message: "User not found",
@@ -125,15 +124,6 @@ adminRouter.post("/product", AdminAuthMiddle, async(req, res) =>{
     const { id } = req.user
     const {name, description, price, image, category, stock} = req.body
     try{
-        // const findCategory = await Category.findOne({name: category})
-        // // console.log(findCategory._id)
-        // if(!findCategory){
-        //     return res.status(400).json({
-        //         message: "Category not found",
-        //     })
-        // }
-        //category not added to product
-        // const categoryId = findCategory._id
         const newProduct = await Product.create({
             name,
             description,

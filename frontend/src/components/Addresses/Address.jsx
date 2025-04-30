@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { FaPlus } from "react-icons/fa";
-import { FiEdit } from "react-icons/fi";
-import { FaTrash } from "react-icons/fa";
 import AddressBar from './AddressBar';
 import AddAddress from './AddAddress';
 import toast from 'react-hot-toast';
@@ -21,7 +19,7 @@ export default function Address() {
             }
         })
         const result = await response.json()
-        console.log(result)
+
         if(response.ok){
             setAddresses(result.address)
         }

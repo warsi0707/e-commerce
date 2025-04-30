@@ -16,7 +16,6 @@ export default function Detail() {
         method: 'GET'
       })
       const result = await response.json()
-      console.log(result.product)
       if(response.ok){
         setProduct(result.product)
       }

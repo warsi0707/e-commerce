@@ -322,7 +322,6 @@ userRouter.post("/order", UserAuthMiddleware, async(req, res)=>{
     try{
         const address = await Address.find({_id:addressId})
         const addressIds = address.map((address) => address._id.toString())
-        console.log("address", addressIds)
         if(!address){
             return res.status(404).json({
                 message: "Address not found",
@@ -337,9 +336,8 @@ userRouter.post("/order", UserAuthMiddleware, async(req, res)=>{
             product: product,
             quantity:quantity
         })
-        console.log("order", order)
         await order.save()
-        console.log("order saved", order)
+
         if(!order){
             return res.status(404).json({
                 message: "Order not found",

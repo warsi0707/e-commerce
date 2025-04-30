@@ -27,7 +27,7 @@ import toast from 'react-hot-toast'
           body: JSON.stringify({names})
         })
         const result = await response.json()
-        console.log(result)
+
         if(response.ok){
           toast.success(result.message)
         }else{
@@ -49,7 +49,7 @@ import toast from 'react-hot-toast'
           body: JSON.stringify({email})
         })
         const result = await response.json()
-        console.log(result)
+
         if(response.ok){
           toast.success(result.message)
         }else{
@@ -71,7 +71,7 @@ import toast from 'react-hot-toast'
           body: JSON.stringify({mobile})
         })
         const result = await response.json()
-        console.log(result)
+
         if(response.ok){
           toast.success(result.message)
         }else{
@@ -95,7 +95,7 @@ import toast from 'react-hot-toast'
           body: JSON.stringify({password, oldpassword, confirmPassword})
         })
         const result = await response.json()
-        console.log(result)
+
         if(response.ok){
           toast.success(result.message)
         }else{

@@ -11,7 +11,7 @@ export default function Products() {
         method: 'GET'
       })
       const result = await response.json()
-      console.log(result)
+
       if(response.ok){
         setProduct(result.products)
       }
